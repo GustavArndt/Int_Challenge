@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import { InputCreator } from "./InputFunction";
 
 export default function InputInterface() {
-    return (
-        <div>
-            InputInterface
-        </div>
-    )
+  return (
+    <div className="input-interface">
+      <InputCreator/>
+    </div>
+  );
 }

@@ -46,17 +46,58 @@
   padding: 0px 10px;
 }
 .data-screen{
-  background-color: turquoise;
   position: absolute;
   top: 70px;
   width: 100%;
   height: auto;
-
+  display: flex;
+  flex-direction: column;
+  
+}
+.chart-interface{
+  width: 85%;
+  margin-bottom: 75px;
+  
+}
+.input-interface{
+  background-color:#2e3440;
+  height: 200px;
+  color: aliceblue;
   display: flex;
   flex-direction: column;
 }
-.chart-interface{
-  background-color: tomato;
-  width: 100%;
-  height: auto;
+.input-interface .line{
+  height: 40px;
+  display: flex;
+  flex-direction: row;
 }
+.input-interface .line .index{
+  background-color: #61656e;
+  height: 100%;
+  width: 50px;
+  text-align: end;
+  padding-top: 15px;
+}
+.input-interface .line .index span{
+  font-size: 20px;
+  margin-right: 10px;
+  color:#42464f ;
+  
+ }
+ .input-interface .line .input{
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+}
+.input-interface .line .input input{
+  background-color:#2e3440;
+  height: 100%;
+  width: 100%;
+  border-width: 0px;
+  color: white;
+  font-size: 20px;
+  padding-top: 15px;
+outline: none;
+
+}
+

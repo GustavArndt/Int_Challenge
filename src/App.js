@@ -11,6 +11,7 @@ function App() {
         <InputInterface />
         <ChartInterface />
       </div>
+      
       <Footer />
     </div>
   );
