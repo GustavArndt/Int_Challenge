@@ -1,5 +1,5 @@
 import React from "react";
-import { InputCreator } from "./InputFunction";
+import InputCreator from "./InputCreator";
 
 export default function InputInterface() {
   return (
