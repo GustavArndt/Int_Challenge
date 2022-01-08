@@ -1,7 +1,7 @@
 import react, { useState, useEffect } from "react";
 
 export default function InputCreator() {
-  const [data, setData] = useState([{ id: 0, query: "ola" }]);
+  const [data, setData] = useState([{ id: 0, query: "" }]);
 
   function handleInputChange(index, e) {
     let newArr = [...data];
@@ -20,7 +20,7 @@ export default function InputCreator() {
   function newLine(line, e) {}
 
   return (
-    <form>
+    <form className="form-input">
       {data.map((dt) => {
         return (
           <div className="line">

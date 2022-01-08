@@ -44,6 +44,7 @@
 }
 .data-screen .split-flex{
   height: 1000px;
+  
 }
 .chart-interface{
   width: 65%;
@@ -56,6 +57,7 @@
   color: aliceblue;
   display: flex;
   flex-direction: column;
+  
 }
 .input-interface .line{
   height: 40px;
@@ -104,6 +106,32 @@
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bolder;
 }
+.form-input{
+  overflow-y: scroll;
+}
+.scroll-tab{
+  position: relative;
+  height: 30px;
+  width: 30px;
+  background-color: cadetblue;
+  top: -10px;
+  left: 73%;
+  z-index: 10;
+}
+.gutter {
+  background-color: none;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-vertical {
+  background-image: url('./assets/images/hamburguer.png');
+  background-size: 55px 27px;
+  background-color: none;
+  border-radius: 5px;
+  cursor: row-resize;
+}
+
 
 
 

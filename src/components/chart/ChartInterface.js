@@ -2,7 +2,7 @@ import React from "react";
 import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 import { data_one, data_two } from "./Data";
-import randomColor from 'randomcolor'
+import randomColor from "randomcolor";
 
 Chart.register(...registerables);
 
@@ -10,11 +10,11 @@ let dataPack = [data_one, data_two];
 
 const generateGraph = (dt) => {
   let dataObject = {};
-  let i=0
-  let color =''
+  let i = 0;
+  let color = "";
   let datasets = dt.map((con) => {
-      i++
-      color=randomColor()
+    i++;
+    color = randomColor();
     return {
       label: `set${i}`,
       backgroundColor: color,
