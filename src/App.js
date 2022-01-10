@@ -2,6 +2,7 @@ import Split from "react-split";
 import InputInterface from "./components/input/InputInterface";
 import ChartInterface from "./components/chart/ChartInterface";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <ChartInterface />
         </Split>
       </div>
-      
+      <Footer />
     </div>
   );
 }

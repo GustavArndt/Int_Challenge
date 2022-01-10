@@ -1,24 +1,25 @@
-*{
+* {
   margin: 0px;
   box-sizing: border-box;
 }
-.header{
+.header {
   position: absolute;
   height: 70px;
   width: 100%;
 
   background-color: #dcdde0;
 
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 28px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 25px;
   font-weight: bolder;
 }
-.header span{
+.header span {
   position: absolute;
   margin-left: 40px;
   margin-top: 15px;
+  height: 100%;
 }
-.footer{
+.footer {
   position: fixed;
   height: 90px;
   width: 100%;
@@ -29,94 +30,31 @@
   flex-direction: column;
   justify-content: space-around;
 }
-.footer .chart-gntr{
+.footer .chart-gntr {
   height: 65px;
 }
 
-.data-screen{
+.data-screen {
   position: absolute;
-  top: 70px;
+  top: 30px;
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
-  
 }
-.data-screen .split-flex{
+.data-screen .split-flex {
   height: 1000px;
-  
 }
-.chart-interface{
+.chart-interface {
   width: 65%;
   margin-bottom: 75px;
-  
 }
-.input-interface{
-  background-color:#2e3440;
+.input-interface {
+  background-color: #2e3440;
   height: 200px;
   color: aliceblue;
   display: flex;
   flex-direction: column;
-  
-}
-.input-interface .line{
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-}
-.input-interface .line .index{
-  background-color: #61656e;
-  height: 100%;
-  width: 50px;
-  text-align: end;
-  padding-top: 15px;
-}
-.input-interface .line .index span{
-  font-size: 20px;
-  margin-right: 10px;
-  color:#42464f ;
-  
- }
- .input-interface .line .input{
-  height: 100%;
-  width: 100%;
-  padding-left: 10px;
-}
-.input-interface .line .input input{
-  background-color:#2e3440;
-  height: 100%;
-  width: 100%;
-  border-width: 0px;
-  color: white;
-  font-size: 20px;
-  padding-top: 15px;
-  outline: none;
-}
-
-.line .footer .chart-gntr .generate-chart{
-  background-color:  #007ffe;
-  width: 200px;
-  margin-left: 60px;
-  margin-top: 5px;
-  border-radius: 5px;
-  padding-bottom: 15px;
-  height: 90%;
-  letter-spacing: 1px;
-  font-size: 18px;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: bolder;
-}
-.form-input{
-  overflow-y: scroll;
-}
-.scroll-tab{
-  position: relative;
-  height: 30px;
-  width: 30px;
-  background-color: cadetblue;
-  top: -10px;
-  left: 73%;
-  z-index: 10;
 }
 .gutter {
   background-color: none;
@@ -125,13 +63,62 @@
 }
 
 .gutter.gutter-vertical {
-  background-image: url('./assets/images/hamburguer.png');
+  background-image: url("./assets/images/hamburguer.png");
   background-size: 55px 27px;
   background-color: none;
   border-radius: 5px;
   cursor: row-resize;
 }
+.footer {
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  bottom: 0px;
+  background-color: #dcdde0;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.footer .chart-gntr {
+  height: 60%;
+}
+.footer .chart-gntr button {
+  background-color: #017eff;
+  border-radius: 5px;
+  border-width: 0px;
+  height: 100%;
+  width: 180px;
+  color: white;
+  margin-left: 50px;
+  font-weight: bolder;
+}
 
-
-
-
+.data-screen {
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.data-screen .split-flex {
+  height: 1000px;
+}
+.chart-interface {
+  width: 65%;
+  margin-bottom: 75px;
+}
+.input-interface {
+  background-color: red;
+  color: aliceblue;
+}
+.input-interface .ace-editor {
+  width: 100%;
+  height: 100%;
+  background-color: royalblue;
+}
+.input-interface .ace-editor .ace {
+  width: 100%;
+  height: 100%;
+}

@@ -1,55 +1,39 @@
-import react, { useState, useEffect } from "react";
+import React from "react";
+import { render } from "react-dom";
+import AceEditor from "react-ace";
 
-export default function InputCreator() {
-  const [data, setData] = useState([{ id: 0, query: "" }]);
+import "ace-builds/src-noconflict/mode-java";
+import "ace-builds/src-noconflict/theme-monokai";
 
-  function handleInputChange(index, e) {
-    let newArr = [...data];
-    newArr[index].query = e.target.value;
-    setData(newArr);
-    console.log(data);
-    console.log(data.length, index);
-    if (index === data.length - 1) {
-      const newMessage = { id: index + 1, query: "" };
-      const addData = [...data, newMessage];
-      setData(addData);
-      console.log(data);
-    }
+import InputCreator from "./InputCreator";
+
+export default function InputCre() {
+  function onChange(newValue) {
+    console.log("change", newValue);
   }
 
-  function newLine(line, e) {}
-
   return (
-    <form className="form-input">
-      {data.map((dt) => {
-        return (
-          <div className="line">
-            <div className="index">
-              <span>{dt.id}</span>
-            </div>
-            <div className="input">
-              <input
-                key={dt.id}
-                value={dt.query}
-                onChange={(e) => handleInputChange(dt.id, e)}
-                name={dt.id}
-                label={dt.id}
-                onKeyPress={(e) => newLine(dt.id, e)}
-              />
-
-              <div className="footer">
-                <div className="chart-gntr">
-                  <input
-                    className="generate-chart"
-                    type="submit"
-                    value="GENERATE CHART"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-      })}
-    </form>
+    <div className="ace-editor">
+        <AceEditor
+  placeholder=""
+  mode="javascript"
+  theme="monokai"
+  name="blah2"
+  width="100%"
+  height="100%"
+  fontSize={30}
+  showPrintMargin={false}
+  showGutter={true}
+  highlightActiveLine={true}
+  value=""
+  setOptions={{
+  enableBasicAutocompletion: false,
+  enableLiveAutocompletion: false,
+  enableSnippets: false,
+  showLineNumbers: true,
+  tabSize: 2,
+  }}/>
+          
+    </div>
   );
 }
