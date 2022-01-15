@@ -1,6 +1,3 @@
-
-
-
 export function Options(xLimits){
     return{
         scales: {
@@ -17,8 +14,8 @@ export function Options(xLimits){
             },
           },
           x: {
-              min:xLimits.begin,
-              max:xLimits.end,
+              min:xLimits[0],
+              max:xLimits[1],
             type: "time",
             grid:{
               display:false
