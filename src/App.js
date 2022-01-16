@@ -23,6 +23,7 @@ function App() {
       <div className="data-screen">
         <Split
           sizes={[20, 80]}
+          minSize={[100,100]}
           direction="vertical"
           cursor="row-resize"
           gutterSize={20}

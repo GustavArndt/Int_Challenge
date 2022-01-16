@@ -7,9 +7,11 @@ Chart.register(...registerables);
 
 export function Options(xLimits) {
   return {
+    
     scales: {
       y: {
         grid: {
+          drawBorder: false,
           tickLength: 8,
         },
         max: 2,
@@ -46,18 +48,25 @@ export function Options(xLimits) {
     responsive: true,
     elements: {
       line: {
-          tension: 0, // disables bezier curves
-      }
-  },
+        tension: 0, // disables bezier curves
+      },
+    },
     tension: 1,
     plugins: {
       legend: {
         align: "start",
-        display: true,
-        position: "right",
+        position:'right',
         labels: {
-          color: "rgb(255, 99, 132)",
+          usePointStyle: true,
+          pointStyle: "circle",
+          paddingTop: 47,
         },
+        
+        grid: {
+          display: false,
+        },
+        display: true,
+        
       },
     },
   };
