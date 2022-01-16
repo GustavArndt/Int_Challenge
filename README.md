@@ -14,8 +14,8 @@ Based on the input sequence of events, a time based line chart containing one or
 # Table of Contents
 
 * [How to install](#How-to-install)   
-* [How to run](#computer-technologies)
-* [Technologies](#computer-technologies)
+* [How to run](#How-to-run)
+* [Technologies](#Technologies)
 * [How to play](#How-to-play)
 
 
