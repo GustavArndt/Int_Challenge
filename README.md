@@ -16,7 +16,7 @@ Based on the input sequence of events, a time based line chart containing one or
 * [How to install](#How-to-install)   
 * [How to run](#How-to-run)
 * [Technologies](#Technologies)
-* [How to play](#How-to-play-:))
+* [How to play](#How-to-play-#:))
 
 
 
