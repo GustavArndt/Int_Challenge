@@ -4,20 +4,17 @@ import ChartInterface from "./components/chart/ChartInterface";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { colorGenerator } from "./Functions";
 import { defaultEvent } from "./Constants";
 //test
-import { data_test } from "./Test";
-import { createData } from "./Test";
-import { createSpan } from "./components/chart/CreateDataSets";
 
 function App() {
   const [colors, setColors] = useState(colorGenerator);
   const [events, setEvents] = useState(defaultEvent);
   const [chartData, setChartData] = useState(defaultEvent);
-  const [lastState,setLastState] = useState([])
+  const [lastState, setLastState] = useState([]);
   const [xLimits, setXLimits] = useState([1519862400000, 1519862460000]);
 
   return (
@@ -49,7 +46,6 @@ function App() {
         setXLimits={setXLimits}
         setLastState={setLastState}
         lastState={lastState}
-        
       />
     </div>
   );

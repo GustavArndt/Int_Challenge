@@ -1,3 +1,10 @@
+import React from "react";
+import { Line } from "react-chartjs-2";
+import { Chart, registerables } from "chart.js";
+import "chartjs-adapter-date-fns";
+
+Chart.register(...registerables);
+
 export function Options(xLimits) {
   return {
     scales: {

@@ -1,6 +1,6 @@
 import React from "react";
 import { xLimitsCreator } from "../Functions";
-import createData2, { createSpan, createStart } from "./chart/CreateDataSets";
+
 const JSON5 = require("json5");
 
 /* check if the data is possible to convert to JSON.

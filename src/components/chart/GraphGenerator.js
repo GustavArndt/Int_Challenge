@@ -1,5 +1,3 @@
-import randomColor from "randomcolor";
-
 //create the datatsets to use in the chartCreator function
 function createDataSetes(data, selectors, colors) {
   let dataSets = [];

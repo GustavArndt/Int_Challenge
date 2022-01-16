@@ -1,6 +1,6 @@
 import randomColor from "randomcolor";
 const JSON5 = require("json5");
-var _ = require("lodash");
+
 
 //create random colors to color state
 export function colorGenerator() {
@@ -23,15 +23,12 @@ export function dataTreatment(data) {
   let supportArray5 = [];
   let supportArray6 = [];
   let startStop = [];
+  
+  //Treat data to become a JSON data
   let dataJson = "[" + data + "]";
   dataJson = dataJson.replaceAll("}", "},");
   dataJson = JSON5.parse(dataJson);
-  //checking mutation data to JSON
-  /* try {
-    dataJson = JSON5.parse(dataJson);
-  } catch (error) {
-    return alert(error);
-  } */
+ 
   //create an new data array with 'groups' selected
   dataJson.forEach((e) => {
     if (e.type === "start") {
