@@ -45,7 +45,7 @@ $ npm start
 Go to http://localhost:3000/ to see the result.
 
 # Technologies
-### This project was made using some of the follow technologies:
+## The main technologies used to build this app:
 ####  "ReactJS" as framework
 #### " React-Ace" as library to build input interface component
 #### " React-Chartjs-2" as library  to build chart interface component
