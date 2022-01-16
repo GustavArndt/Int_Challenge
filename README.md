@@ -8,7 +8,7 @@ The input data is a sequence of events. The data will be manually input trough o
 Based on the input sequence of events, a time based line chart containing one or more series is plotted on a interface chart.
 
                  
-<a align='center' href="https://ibb.co/pdMYGQW"><img src="https://i.ibb.co/M7tFWf8/Captura-de-tela-de-2022-01-16-15-52-17.png" alt="Captura-de-tela-de-2022-01-16-15-52-17" border="2" /><br>Gustavo Arndt's challenge screenshot</a>
+<img src="./ChallengeScreen.png" width="1000"><br>_Gustavo Arndt's challenge screenshot_
 
 
 # Table of Contents
@@ -58,13 +58,13 @@ In this web application you have one screen splitted in two screens.
 
 The first screen, on the top, you will find the input interface where you can put your data in order to get your data plotted. (Find below the recommended data format you  should use to have better performance)
 
-<a align='center' href="https://ibb.co/pdMYGQW"><img src="https://i.ibb.co/M7tFWf8/Captura-de-tela-de-2022-01-16-15-52-17.png" alt="Captura-de-tela-de-2022-01-16-15-52-17" border="2" /><br>Input Interface Screen</a>
+<img src="./inputScreen.png" width="700"><br>_Input Interface Screen_
 
 The second screen,on the bottom, you will find the chart interface where you can visualize your data plotted.(Find below some details about the chart)
 
-<a align='center' href="https://ibb.co/pdMYGQW"><img src="https://i.ibb.co/M7tFWf8/Captura-de-tela-de-2022-01-16-15-52-17.png" alt="Captura-de-tela-de-2022-01-16-15-52-17" border="2" /><br>chart Interface Screen</a>
+<img src="./chartScreen.png" width="700"><br>_chart Interface Screen_
 
-Ater you input your data just press Generate chart button and  _"Voilà"_ .
+After you input your data you can just press 'GENERATE CHART' button and  _"Voilà"_ .
 
 ## Input interface hints & data rules:
 First you need to know about the kind of data we are dealing with:
@@ -105,12 +105,15 @@ Example
 {type: 'data', timestamp: 1519780251000, os: 'linux', browser: 'chrome', min_response_time: 0.1, max_response_time: 1.3}
 ```
 ### Pay Attention
- Absent data values for the fields defined by *select* and *group* will generate new series. 
- Fields that are not defined will be ignored.
+Absent data values for the fields defined by *select* and *group* will generate new series. 
+ 
+Fields that are not defined will be ignored.
+
 The fields 'timestamp' and 'type' must be inside all events, otherwise the event will be ignored.
+
 Dont'use 'commas' to split each event, otherwise you will receive 'JSON syntax error'. 
 
 
 
-Any issues or suggestions please get in touch by email.
+## Any issues or suggestions please get in touch
 gustavoarndt1988@gmail.com
