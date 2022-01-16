@@ -6,9 +6,6 @@ import "ace-builds/src-noconflict/theme-monokai";
 
 
 export default function InputCreator(props) {
-
-  
-
   return (
     <div className="ace-editor">
       <AceEditor

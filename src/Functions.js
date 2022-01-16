@@ -12,26 +12,27 @@ export function colorGenerator() {
   return colors;
 }
 
+//create a treated data tha is used to plot the chart
 export function dataTreatment(data) {
   let groups = [];
   let selectors = [];
-  let newDataArray = [];
-  let newDataArray2 = [];
-  let suppArrayData = [];
-  let suppArrayData2 = [];
-  let newDataArray3 = [];
-  let newDataArray4 = [];
+  let supportArray = [];
+  let supportArray2 = [];
+  let supportArray3 = [];
+  let supportArray4 = [];
+  let supportArray5 = [];
+  let supportArray6 = [];
   let startStop = [];
   let dataJson = "[" + data + "]";
   dataJson = dataJson.replaceAll("}", "},");
-
+  dataJson = JSON5.parse(dataJson);
   //checking mutation data to JSON
-  try {
+  /* try {
     dataJson = JSON5.parse(dataJson);
   } catch (error) {
     return alert(error);
-  }
-  //create an new data array with groups selected
+  } */
+  //create an new data array with 'groups' selected
   dataJson.forEach((e) => {
     if (e.type === "start") {
       e.group.forEach((g) => {
@@ -60,16 +61,16 @@ export function dataTreatment(data) {
     }
   });
 
-  //create a new data array with groups selected
+  //create a new data array with 'groups' selected
   dataJson.forEach((e) => {
     groups.forEach((a) => {
       if (e.hasOwnProperty(a)) {
-        newDataArray.push(e);
+        supportArray.push(e);
       }
     });
   });
-  newDataArray = Array.from(
-    new Set(newDataArray.map(JSON.stringify)),
+  supportArray = Array.from(
+    new Set(supportArray.map(JSON.stringify)),
     JSON.parse
   );
 
@@ -82,33 +83,33 @@ export function dataTreatment(data) {
     }
   });
 
-  newDataArray.forEach((e) => {
+  supportArray.forEach((e) => {
     selectors.forEach((a) => {
       if (e.hasOwnProperty(a)) {
-        newDataArray2.push(e);
+        supportArray2.push(e);
       }
     });
   });
-  newDataArray2 = Array.from(
-    new Set(newDataArray2.map(JSON.stringify)),
+  supportArray2 = Array.from(
+    new Set(supportArray2.map(JSON.stringify)),
     JSON.parse
   );
 
   //remove all elements that doesn't contain type:data
-  newDataArray2.forEach((e) => {
+  supportArray2.forEach((e) => {
     if (e.type === "data") {
-      suppArrayData.push(e);
+      supportArray3.push(e);
     }
   });
 
   //remove all elements that doesn't contain timestamp or if timestamp isNaN
-  suppArrayData.forEach((e) => {
+  supportArray3.forEach((e) => {
     if (e.hasOwnProperty("timestamp") && typeof e.timestamp === "number") {
-      suppArrayData2.push(e);
+      supportArray4.push(e);
     }
   });
 
-  suppArrayData2.forEach((e) => {
+  supportArray4.forEach((e) => {
     let groupArray = [];
     for (let i = 0; i < groups.length; i++) {
       if (e.hasOwnProperty(groups[i])) {
@@ -117,26 +118,28 @@ export function dataTreatment(data) {
     }
     e["groups"] = groupArray;
 
-    newDataArray3.push(e);
+    supportArray5.push(e);
   });
-
-  newDataArray3.forEach((e) => {
+  //group events in arrays separetd by their especific groups
+  supportArray5.forEach((e) => {
     let supArray = [];
-    newDataArray3.forEach((f) => {
+    supportArray5.forEach((f) => {
       if (e.groups.sort().toString() === f.groups.sort().toString()) {
         supArray.push(f);
       }
     });
-    newDataArray4.push(supArray);
+    supportArray6.push(supArray);
   });
-  newDataArray4 = Array.from(
-    new Set(newDataArray4.map(JSON.stringify)),
+  supportArray6 = Array.from(
+    new Set(supportArray6.map(JSON.stringify)),
     JSON.parse
   );
-  newDataArray4 = newDataArray4.filter((e) => e.length);
-
-  return [newDataArray4, selectors, groups, startStop];
+  supportArray6 = supportArray6.filter((e) => e.length);
+  
+  return [supportArray6, selectors, groups, startStop];
 }
+
+
 //create limits in x(timescale)
 export function xLimitsCreator(data) {
   let startStop = [];

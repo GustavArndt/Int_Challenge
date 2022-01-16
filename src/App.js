@@ -17,6 +17,7 @@ function App() {
   const [colors, setColors] = useState(colorGenerator);
   const [events, setEvents] = useState(defaultEvent);
   const [chartData, setChartData] = useState(defaultEvent);
+  const [lastState,setLastState] = useState([])
   const [xLimits, setXLimits] = useState([1519862400000, 1519862460000]);
 
   return (
@@ -36,13 +37,19 @@ function App() {
             chartData={chartData}
             colors={colors}
             setChartData={setChartData}
+            setLastState={setLastState}
+            lastState={lastState}
           />
         </Split>
       </div>
       <Footer
+        chartData={chartData}
         setChartData={setChartData}
         events={events}
         setXLimits={setXLimits}
+        setLastState={setLastState}
+        lastState={lastState}
+        
       />
     </div>
   );
