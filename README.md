@@ -16,7 +16,7 @@ Based on the input sequence of events, a time based line chart containing one or
 * [How to install](#How-to-install)   
 * [How to run](#How-to-run)
 * [Technologies](#Technologies)
-* [How to play](#How-to-play-#:))
+* [How to play](#How-to-play)
 
 
 
@@ -51,7 +51,7 @@ Go to http://localhost:3000/ to see the result.
 #### " React-Chartjs-2" as library  to build chart interface component
 #### " React-split" as library  to build the split panel component.
 
-# How to play :)
+# How to play
 
 ## Basics:
 In this web application you have one screen splitted in two screens. 
@@ -112,5 +112,5 @@ Dont'use 'commas' to split each event, otherwise you will receive 'JSON syntax e
 
 
 
-Any issue0 or suggestionss please get in touch by email.
+Any issues or suggestions please get in touch by email.
 gustavoarndt1988@gmail.com
