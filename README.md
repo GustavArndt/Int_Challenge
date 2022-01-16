@@ -2,7 +2,7 @@
 
 # Intelie Plot Challenge - _Made by_ _Gustavo Arndt_
 
-In this challenge, I had to implemente a web application that plots a line chart based on some manually input data.
+In this challenge, I had to implemente a web application that plots a line chart based, on some manually input data.
 
 The input data is a sequence of events. The data will be manually input trough on input interface by the final user.
 Based on the input sequence of events, a time based line chart containing one or more series is plotted on a interface chart.
