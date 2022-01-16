@@ -1,70 +1,116 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Intelie Plot Challenge - _Made by_ _Gustavo Arndt_
 
-In the project directory, you can run:
+In this challenge, I had to implemente a web application that plots a line chart based on some manually input data.
 
-### `npm start`
+The input data is a sequence of events. The data will be manually input trough on input interface by the final user.
+Based on the input sequence of events, a time based line chart containing one or more series is plotted on a interface chart.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+                 
+<a align='center' href="https://ibb.co/pdMYGQW"><img src="https://i.ibb.co/M7tFWf8/Captura-de-tela-de-2022-01-16-15-52-17.png" alt="Captura-de-tela-de-2022-01-16-15-52-17" border="2" /><br>Gustavo Arndt's challenge screenshot</a>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# Table of Contents
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [How to install](#How-to-install)   
+* [How to run](#computer-technologies)
+* [Technologies](#computer-technologies)
+* [How to play](#How-to-play)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# How to install
+   ```bash
+#Clone Repository
+$ git clone https://github.com/GustavArndt/chart_challenge_intelie.git
+```
+or
+   ```bash
+#Download from:
+https://github.com/GustavArndt/chart_challenge_intelie
+```
+and go to: code>download ZIP
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# How to run
+```bash
+# First you need to install the dependencies, in the project folder run:
+$ npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Then you can run the application by running:
+$ npm start
+```
+Go to http://localhost:3000/ to see the result.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Technologies
+### This project was made using some of the follow technologies:
+####  "ReactJS" as framework
+#### " React-Ace" as library to build input interface component
+#### " React-Chartjs-2" as library  to build chart interface component
+#### " React-split" as library  to build the split panel component.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# How to play :)
 
-## Learn More
+## Basics:
+In this web application you have one screen splitted in two screens. 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The first screen, on the top, you will find the input interface where you can put your data in order to get your data plotted. (Find below the recommended data format you  should use to have better performance)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<a align='center' href="https://ibb.co/pdMYGQW"><img src="https://i.ibb.co/M7tFWf8/Captura-de-tela-de-2022-01-16-15-52-17.png" alt="Captura-de-tela-de-2022-01-16-15-52-17" border="2" /><br>Input Interface Screen</a>
 
-### Code Splitting
+The second screen,on the bottom, you will find the chart interface where you can visualize your data plotted.(Find below some details about the chart)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<a align='center' href="https://ibb.co/pdMYGQW"><img src="https://i.ibb.co/M7tFWf8/Captura-de-tela-de-2022-01-16-15-52-17.png" alt="Captura-de-tela-de-2022-01-16-15-52-17" border="2" /><br>chart Interface Screen</a>
 
-### Analyzing the Bundle Size
+Ater you input your data just press Generate chart button and  _"Voilà"_ .
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Input interface hints & data rules:
+First you need to know about the kind of data we are dealing with:
 
-### Making a Progressive Web App
+### start
+Events of type *start* define that a new sequence of data events will follow, along with the fields that may be plotted and their grouping. A group is a category for splitting the same variable into different series.
+You are able to put as many different groups as you want.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Example:
+```
+{type: 'start', timestamp: 1519780251293, select: ['min_response_time', 'max_response_time'], group: ['os', 'browser']}
+```
+In this example, for each different value of the pair (os, browser), we will plot two lines: one that represents the minimum response time, and one that represents the maximum response time. That is: if there are two different values for 'os' and two different values for 'browser', we should have 8 different lines plotted.
 
-### Advanced Configuration
+### span
+Events of type *span* define what is the visible date range for the chart. A new event of this type may update the chart timescale boundaries.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Example:
+```
+{type: 'span', timestamp: 1519780251293, begin: 1519780251293, end: 1519780260201}
+```
+In this example the data will be plotted inside the timescale interval between the "begin" and "end" values. All data outside this range will be ignored.
 
-### Deployment
+### stop
+Events of type *stop* define that no more data events will follow.
+A *stop* event is generated after loading a static timespan in the past, or if the user explicitly stops the query. Any events that eventually follow a *stop* event will be ignored, except for a new *start*, which would imply the creation of a new chart.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Example:
+```
+{type: 'stop', timestamp: 1519780251293}
+```
 
-### `npm run build` fails to minify
+### data
+Events of type *data* define the content that might be displayed on the chart.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Example
+```
+{type: 'data', timestamp: 1519780251000, os: 'linux', browser: 'chrome', min_response_time: 0.1, max_response_time: 1.3}
+```
+### Pay Attention
+ Absent data values for the fields defined by *select* and *group* will generate new series. 
+ Fields that are not defined will be ignored.
+The fields 'timestamp' and 'type' must be inside all events, otherwise the event will be ignored.
+Dont'use 'commas' to split each event, otherwise you will receive 'JSON syntax error'. 
+
+
+
+Any issue0 or suggestionss please get in touch by email.
+gustavoarndt1988@gmail.com
