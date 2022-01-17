@@ -3,18 +3,16 @@ import InputInterface from "./components/input/InputInterface";
 import ChartInterface from "./components/chart/ChartInterface";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
 import { useState } from "react";
-
 import { colorGenerator } from "./Functions";
 import { defaultEvent } from "./Constants";
 //test
 
 function App() {
-  const [colors, setColors] = useState(colorGenerator);
-  const [events, setEvents] = useState(defaultEvent);
-  const [chartData, setChartData] = useState(defaultEvent);
-  const [lastState, setLastState] = useState([]);
+  const [colors, setColors] = useState(colorGenerator);//set random colors used in the chart
+  const [events, setEvents] = useState(defaultEvent); //input data
+  const [chartData, setChartData] = useState(defaultEvent); //chart data
+  const [lastState, setLastState] = useState([]);//last state is used if we get some error
   const [xLimits, setXLimits] = useState([1519862400000, 1519862460000]);
 
   return (
@@ -23,7 +21,7 @@ function App() {
       <div className="data-screen">
         <Split
           sizes={[20, 80]}
-          minSize={[100,100]}
+          minSize={[100, 100]}
           direction="vertical"
           cursor="row-resize"
           gutterSize={20}

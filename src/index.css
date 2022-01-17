@@ -19,32 +19,6 @@
   margin-top: 15px;
   height: 100%;
 }
-.footer {
-  position: fixed;
-  height: 90px;
-  width: 100%;
-  bottom: 0px;
-  background-color: #dcdde0;
-  left: 0px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.footer .chart-gntr {
-  height: 65px;
-}
-
-.data-screen {
-  position: absolute;
-  top: 30px;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-}
-.data-screen .split-flex {
-  height: 1000px;
-}
 .chart-interface {
   margin-left: 50px;
   width: 65%;

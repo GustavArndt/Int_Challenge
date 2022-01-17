@@ -2,7 +2,7 @@ import randomColor from "randomcolor";
 const JSON5 = require("json5");
 
 
-//create random colors to color state
+/* create random colors to color state */
 export function colorGenerator() {
   let colors = [];
   for (let i = 0; i < 100; i++) {
@@ -12,7 +12,7 @@ export function colorGenerator() {
   return colors;
 }
 
-//create a treated data tha is used to plot the chart
+/* create a treated data that is used to plot the chart */
 export function dataTreatment(data) {
   let groups = [];
   let selectors = [];
@@ -24,12 +24,12 @@ export function dataTreatment(data) {
   let supportArray6 = [];
   let startStop = [];
   
-  //Treat data to become a JSON data
+  /* Treat the input to transform in JSON data */
   let dataJson = "[" + data + "]";
   dataJson = dataJson.replaceAll("}", "},");
   dataJson = JSON5.parse(dataJson);
  
-  //create an new data array with 'groups' selected
+  /* create an array with selected 'groups' from 'start' event */
   dataJson.forEach((e) => {
     if (e.type === "start") {
       e.group.forEach((g) => {
@@ -37,7 +37,8 @@ export function dataTreatment(data) {
       });
     }
   });
-  //create Xlimits
+
+  /* create Xlimits */
   dataJson.forEach((e) => {
     if (e.type === "span") {
       startStop.push(e.begin);
@@ -58,7 +59,7 @@ export function dataTreatment(data) {
     }
   });
 
-  //create a new data array with 'groups' selected
+  /* create a new data array based on the 'groups' selected */
   dataJson.forEach((e) => {
     groups.forEach((a) => {
       if (e.hasOwnProperty(a)) {
@@ -71,7 +72,7 @@ export function dataTreatment(data) {
     JSON.parse
   );
 
-  //create a new data array with selectors selected
+  /* create a new data array based on the 'selectors' selected */
   dataJson.forEach((e) => {
     if (e.type === "start") {
       e.select.forEach((g) => {
@@ -91,21 +92,24 @@ export function dataTreatment(data) {
     new Set(supportArray2.map(JSON.stringify)),
     JSON.parse
   );
+    
 
-  //remove all elements that doesn't contain type:data
+  /* create new data Array conatinig just 'type:data' events */
   supportArray2.forEach((e) => {
     if (e.type === "data") {
       supportArray3.push(e);
     }
   });
 
-  //remove all elements that doesn't contain timestamp or if timestamp isNaN
+  /* create new data Array containing just events that has timestamp or if timestamp is a number */
   supportArray3.forEach((e) => {
     if (e.hasOwnProperty("timestamp") && typeof e.timestamp === "number") {
       supportArray4.push(e);
     }
   });
 
+/*Create an object called 'groups' in each event in order to make easier 
+  to separete the events in each serie */
   supportArray4.forEach((e) => {
     let groupArray = [];
     for (let i = 0; i < groups.length; i++) {
@@ -117,7 +121,8 @@ export function dataTreatment(data) {
 
     supportArray5.push(e);
   });
-  //group events in arrays separetd by their especific groups
+  
+  /* create a new Array with all series o events separated by their 'groups' */
   supportArray5.forEach((e) => {
     let supArray = [];
     supportArray5.forEach((f) => {
@@ -137,20 +142,20 @@ export function dataTreatment(data) {
 }
 
 
-//create limits in x(timescale)
+/* create limits in x-axis(timescale) based on start,stop or span */
 export function xLimitsCreator(data) {
   let startStop = [];
   let dJson = "[" + data + "]";
   dJson = dJson.replaceAll("}", "},");
 
-  //checking mutation data to JSON
+  /* check mutation input to JSON data */
   try {
     dJson = JSON5.parse(dJson);
   } catch (error) {
     return alert(error);
   }
 
-  //if we have start and stop
+  /* if we have start and stop */
   dJson.forEach((e) => {
     if (e.type === "start") {
       startStop.push(e.timestamp);
@@ -160,7 +165,7 @@ export function xLimitsCreator(data) {
     }
   });
 
-  // but if we have a span
+  /* but if we have a span */
   dJson.forEach((e) => {
     if (e.type === "span") {
       if (e.hasOwnProperty("begin")) {

@@ -1,4 +1,4 @@
-//create the datatsets to use in the chartCreator function
+/* create the datatsets feed 'chartCreator' function */
 function createDataSetes(data, selectors, colors) {
   let dataSets = [];
   let nada = selectors;
@@ -29,6 +29,7 @@ function createDataSetes(data, selectors, colors) {
   return dataSets;
 }
 
+//create the variable 'data' that is the input of chart.js
 export function chartCreator(func, colors) {
   const data = func[0];
   const selectors = func[1];

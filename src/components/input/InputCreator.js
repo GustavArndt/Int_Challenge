@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import AceEditor from "react-ace";
+import AceEditor from "react-ace";//Library that creates an codePen interface
 
 import "ace-builds/src-noconflict/mode-java";
 import "ace-builds/src-noconflict/theme-monokai";
+import "ace-builds/src-noconflict/ext-language_tools"
 
+/**/
 
 export default function InputCreator(props) {
   return (
@@ -13,7 +15,6 @@ export default function InputCreator(props) {
         value={props.events}
         mode="javascript"
         theme="monokai"
-        name="blah2"
         width="100%"
         height="100%"
         fontSize={20}

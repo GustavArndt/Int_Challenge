@@ -3,10 +3,9 @@ import { xLimitsCreator } from "../Functions";
 
 const JSON5 = require("json5");
 
-/* check if the data is possible to convert to JSON.
-if no: retrieve the lastState data.
-if yes: get the actual data events */
-
+/* This function check if the data is possible to convert to JSON.
+In case of negative: retrieve the lastState data.
+In case of positive: get the actual data events */
 function validate(data, lastState) {
   try {
     let dt = "[" + data + "]";
@@ -15,6 +14,7 @@ function validate(data, lastState) {
     return data;
   } catch (error) {
     alert(error);
+    alert('Fix the errors and try it again')
     return lastState;
   }
 }
@@ -25,9 +25,9 @@ export default function Footer(props) {
       <div className="chart-gntr">
         <button
           onClick={() => {
-            const fData = validate(props.events, props.chartData);
-            props.setXLimits(xLimitsCreator(fData));
-            props.setChartData(fData);
+            const validatedData = validate(props.events, props.chartData);
+            props.setXLimits(xLimitsCreator(validatedData));
+            props.setChartData(validatedData);
           }}
         >
           GENERATE CHART

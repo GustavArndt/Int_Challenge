@@ -1,10 +1,9 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
-import "chartjs-adapter-date-fns";
+import "chartjs-adapter-date-fns";//Make the use of timestamp in 'milliseconds' format possible
 
 Chart.register(...registerables);
 
+//This Function set the configuration of the chart
 export function Options(xLimits) {
   return {
     
@@ -14,11 +13,10 @@ export function Options(xLimits) {
           drawBorder: false,
           tickLength: 8,
         },
-        max: 2,
         min: 0,
         ticks: {
           display: false,
-          stepSize: 0.4,
+          stepSize: 0.3,
         },
       },
       x: {
@@ -27,10 +25,6 @@ export function Options(xLimits) {
         type: "time",
         grid: {
           display: false,
-        },
-        ticks: {
-          maxRotation: 100,
-          minRotation: 80,
         },
         time: {
           format: "ss",
